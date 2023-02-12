@@ -7,7 +7,8 @@ export default class Board extends React.Component {
   renderSquare(i, squareShade) {
     return (
       <Square
-        piece={this.props.squares[i]}
+        key={i}
+        keyVal={i}
         style={this.props.squares[i] ? this.props.squares[i].style : null}
         shade={squareShade}
         onClick={() => this.props.onClick(i)}
@@ -26,7 +27,11 @@ export default class Board extends React.Component {
             : "dark-square";
         squareRows.push(this.renderSquare(i * 8 + j, squareShade));
       }
-      board.push(<div className="board-row">{squareRows}</div>);
+      board.push(
+        <div className="board-row" key={i}>
+          {squareRows}
+        </div>
+      );
     }
 
     return <div>{board}</div>;
@@ -34,5 +39,5 @@ export default class Board extends React.Component {
 }
 
 function isEven(num) {
-  return num % 2 == 0;
+  return num % 2 === 0;
 }

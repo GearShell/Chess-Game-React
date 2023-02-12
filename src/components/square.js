@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../index.css";
 
 export default function Square(props) {
@@ -7,6 +8,7 @@ export default function Square(props) {
       className={"square " + props.shade}
       onClick={props.onClick}
       style={props.style}
+      key={props.keyVal}
     ></button>
   );
 }
