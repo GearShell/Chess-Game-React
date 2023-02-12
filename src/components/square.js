@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "../index.css";
 
-const square = () => {
+export default function Square(props) {
   return (
-    <div>square</div>
-  )
+    <button
+      className={"square " + props.shade}
+      onClick={props.onClick}
+      style={props.style}
+    ></button>
+  );
 }
-
-export default square
