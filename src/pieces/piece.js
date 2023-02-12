@@ -1,9 +1,6 @@
-import React from 'react'
-
-const bishop = () => {
-  return (
-    <div>bishop</div>
-  )
+export default class Piece {
+  constructor(player, iconUrl){
+    this.player = player;
+    this.style = {backgroundImage: "url('"+iconUrl+"')"};
+  }
 }
-
-export default bishop
